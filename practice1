@@ -1,0 +1,111 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int key;
+	double num1 = 0;
+	double num2 = 0;
+	double result = 0;
+	double res = 0;
+	double numb1 = 0;
+	double numb2 = 0;
+	while (true) {
+		printf("\n1.Slozhenie");
+		printf("\n2.Vichitanie");
+		printf("\n3.Ymnozhenie");
+		printf("\n4.Delenie");
+		printf("\n5.Ostatok ot delenie");
+		printf("\n6.Fibonacci");
+		printf("\n7.Exit");
+
+		cin >> key;
+		switch (key)
+		{
+		case 1:
+		{
+			printf("vvedi pervoe chislo -> ");
+			cin >> num1;
+			printf("vvedi vtoroe chislo -> ");
+			cin >> num2;
+			result = num1 + num2;
+			cout << "resultat: " << result;
+			break;
+		}
+		case 2:
+		{
+			printf("vvedi pervoe chislo -> ");
+			cin >> num1;
+			printf("vvedi vtoroe chislo -> ");
+			cin >> num2;
+			result = num1 - num2;
+			cout << "resultat: " << result;
+			break;
+		}
+		case 3:
+		{
+			printf("vvedi pervoe chislo -> ");
+			cin >> num1;
+			printf("vvedi vtoroe chislo -> ");
+			cin >> num2;
+			result = num1 * num2;
+			cout << "resultat: " << result;
+			break;
+		}
+		case 4:
+		{
+			printf("vvedi pervoe chiso -> ");
+			cin >> numb1;
+			printf("vvedi vtoroe chislo -> ");
+			cin >> numb2;
+			while (numb2 == 0)
+			{
+				cout << "delit na null nelzya: ";
+				cin >> numb2;
+			}
+			res = numb1 / numb2;
+			cout << "resultat: " << res;
+			break;
+		}
+		case 5:
+		{
+			printf("vvedi pervoe chislo -> ");
+			cin >> num1;
+			printf("vvedi vtoroe chislo -> ");
+			cin >> num2;
+			res = (int)num1 % (int)num2;
+			cout << "resultat " << res;
+			break;
+		}
+		case 6:
+		{
+			int first_num = 0;
+			int second_num = 1;
+			int third_num = 1;
+			int quant;
+			cout << "nomer\n";
+			cin >> quant;
+			if (quant >= 1)
+				cout << 0 << "\n";
+			if (quant >= 2)
+				cout << 1 << "\n";
+			for (int k = 1; k < quant - 2; k++)
+			{
+				third_num = first_num + second_num;
+				cout << third_num << "\n";
+				first_num = second_num;
+				second_num = third_num;
+			}
+			break;
+		}
+		case 7:
+		{
+			exit(0);
+		}
+
+		default:
+			break;
+		}
+
+	}
+}
